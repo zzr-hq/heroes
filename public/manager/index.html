@@ -204,7 +204,14 @@
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
   <script src="../lib/js/template-web.js"></script>
-
+ <script>
+ $.ajax('/getHeroes',function (res) {
+   var str = template('moban',{
+     arr:res
+   });
+   $('tbody').html(str);
+ },'json');
+ </script>
 </body>
 </html>
 
